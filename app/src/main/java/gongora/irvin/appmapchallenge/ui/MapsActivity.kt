@@ -133,7 +133,10 @@ class MapsActivity : DaggerAppCompatActivity(), OnMapReadyCallback, View.OnClick
                 Util.hideKeyboardFrom(context, v)
                 microPhone()
             }
-            R.id.imgDelete -> showText()
+            R.id.imgDelete -> {
+                Util.hideKeyboardFrom(context, v)
+                showText()
+            }
             R.id.textViewSearch -> {
                 Util.showKeyboard(editTextSearch, context)
                 showEdiText()
