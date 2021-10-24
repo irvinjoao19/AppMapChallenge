@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Map Challenge</string>
+    <string name="title_activity_maps">MapsActivity</string>
+    <string name="ic_micro">ic_micro</string>
+    <string name="busca_aqui">Busca aquí</string>
+    <string name="title_micro">Di algo</string>
+    <string name="clima">Clima</string>
+    <string name="temperatura">15°</string>
+    <string name="img_clima">img_clima</string>
+    <string name="humidity">humidity</string>
+    <string name="wind">wind</string>
+    <string name="title_wind">10 km/h</string>
+    <string name="_50_humedad">50ª humedad</string>
+</resources>
