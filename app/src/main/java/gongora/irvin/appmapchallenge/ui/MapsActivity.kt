@@ -6,7 +6,6 @@ import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.os.Bundle
 import android.speech.RecognizerIntent
-import android.util.Log
 import android.view.KeyEvent
 import android.view.View
 import android.view.animation.DecelerateInterpolator
@@ -24,12 +23,10 @@ import com.google.android.gms.maps.model.LatLng
 import com.squareup.picasso.Picasso
 import dagger.android.support.DaggerAppCompatActivity
 import gongora.irvin.appmapchallenge.R
-import gongora.irvin.appmapchallenge.data.local.model.Weather
 import gongora.irvin.appmapchallenge.data.viewModel.MapViewModel
 import gongora.irvin.appmapchallenge.data.viewModel.ViewModelFactory
 import gongora.irvin.appmapchallenge.helper.Util
 import kotlinx.android.synthetic.main.activity_maps.*
-import java.lang.Exception
 import java.util.*
 import javax.inject.Inject
 
@@ -68,7 +65,6 @@ class MapsActivity : DaggerAppCompatActivity(), OnMapReadyCallback, View.OnClick
             Util.snackBarMensaje(window.decorView, it)
         })
         mapViewModel.address.observe(this, {
-            Log.i("TAG-COORDENADAS", "${it.latitude},${it.longitude}")
             hideLoad()
             val camera = CameraPosition.Builder()
                 .target(LatLng(it.latitude, it.longitude))
@@ -91,7 +87,6 @@ class MapsActivity : DaggerAppCompatActivity(), OnMapReadyCallback, View.OnClick
             textViewWind.text = String.format("%s km/h", it.windspdKmh)
         })
     }
-
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
@@ -146,7 +141,7 @@ class MapsActivity : DaggerAppCompatActivity(), OnMapReadyCallback, View.OnClick
             R.id.imgArrowBack -> {
                 Util.hideKeyboardFrom(context, v)
                 showText()
-                textViewSearch.text = getString(R.string.busca_aqui)
+                textViewSearch.text = getString(R.string.search_here)
             }
         }
     }
@@ -157,7 +152,6 @@ class MapsActivity : DaggerAppCompatActivity(), OnMapReadyCallback, View.OnClick
             mapViewModel.searchLocation(v.text.toString(), context)
             Util.hideKeyboard(context)
         }
-
         return false
     }
 
@@ -180,7 +174,7 @@ class MapsActivity : DaggerAppCompatActivity(), OnMapReadyCallback, View.OnClick
     }
 
     private fun showText() {
-        textViewSearch.text = getString(R.string.busca_aqui)
+        textViewSearch.text = getString(R.string.search_here)
         editTextSearch.text = null
         editTextSearch.visibility = View.GONE
         textViewSearch.visibility = View.VISIBLE

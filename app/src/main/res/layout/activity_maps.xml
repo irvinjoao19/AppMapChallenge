@@ -47,7 +47,7 @@
                 android:layout_height="0dp"
                 android:layout_marginStart="15dp"
                 android:gravity="center_vertical"
-                android:text="@string/busca_aqui"
+                android:text="@string/search_here"
                 android:textSize="18sp"
                 android:textStyle="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -60,7 +60,7 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:hint="@string/busca_aqui"
+                android:hint="@string/search_here"
                 android:inputType="text"
                 android:textSize="18sp"
                 android:textStyle="normal"
@@ -118,6 +118,7 @@
         android:layout_marginBottom="10dp"
         android:clickable="true"
         android:focusable="true"
+        android:visibility="gone"
         app:cardCornerRadius="20dp"
         app:cardElevation="8dp">
 
@@ -140,7 +141,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
-                android:text="@string/temperatura"
+                android:text="@string/temp"
                 android:textSize="58sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="parent"
@@ -197,7 +198,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="@string/_50_humedad"
+                android:text="@string/title_humidity"
                 app:layout_constraintEnd_toEndOf="@+id/imgHumidity"
                 app:layout_constraintStart_toStartOf="@+id/imgHumidity"
                 app:layout_constraintTop_toBottomOf="@+id/imgHumidity" />
